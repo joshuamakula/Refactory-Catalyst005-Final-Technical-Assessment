@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Technical Assessment</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="margin: 0 auto; padding-top: 25px;">
+                <fieldset class="form-group border p-2">
+                    <legend class="w-auto border-primary"></legend>
+                    <img src="/images/form-header-image.png" alt="">
+                    <div style="text-align: center; padding-bottom: 30px;">
+                        <h5 style="font-weight: 400;">Mnistry of Health</h5>
+                        <h2 style="font-weight:bolder;">COVID-19 (CORONA VIRUS)</h2>
+                        <h5 style="font-weight: 400;">Virus - Test Registration Form </h5>
+                    </div>
+                    <form action="" name="covidReg" method="POST" id="covidReg">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="surName">Surname</label>
+                                <input type="text" class="form-control" id="surName" name="surName">
+                                <small id="surNameerr"></small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="givenName">Given Name</label>
+                                <input type="text" class="form-control" id="givenName" name="givenName">
+                                <small id="givenNameerr"></small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" class="form-control" id="dob" name="dob">
+                                <small id="doberr"></small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="residence">Place of residence</label>
+                                <input type="text" class="form-control" id="residence" name="residence">
+                                <small id="residenceerr"></small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="occupation">Occupation</label>
+                                <input type="text" class="form-control" id="occupation" name="occupation">
+                                <small id="occupationerr"></small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="nationality">Nationality</label>
+                                <input type="text" class="form-control" id="nationality" name="nationality">
+                                <small id="nationalityerr"></small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="occupation">Gender</label>
+                                
+
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" checked>Male</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender">Female</label>
+                                    
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md">
+                                <label for="category">Category</label>
+                                <select id="category" name="category" class="form-control">
+                                    <option value="0" selected>-- Select Category --</option>
+                                    <option value="1">Returnee</option>
+                                    <option value="2">Contact</option>
+                                    <option value="3">Alert</option>
+                                    <option value="4">Volunteer</option>
+                                </select>
+                                <small id="categoryerr"></small>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group offset-md-6 col-md-6">
+                                <button type="submit" class="btn btn-primary btn-block float-right" onclick="return validateForm()">Register</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/js/validate.js"></script>
+</body>
+
+</html>
