@@ -14,6 +14,10 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 require('./models/registrationModel')
 const Registeration = mongoose.model('Register')
+const app = express();
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 // Database connection
 mongoose.connect('mongodb://localhost:27017/testRegistration', {
     useNewUrlParser: true,
@@ -26,10 +30,12 @@ mongoose.connect('mongodb://localhost:27017/testRegistration', {
         console.log('You are live');
 })
 
+app.set('view engine', 'pug')
+app.set('views', './views');
 
-const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }))
+
+
 
 var view = "./views/"
 
@@ -37,9 +43,7 @@ var view = "./views/"
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => { // new
-    res.sendFile('/index.html', {
-        root: view
-    })
+    res.render('index')
 });
 
 // Saving to the database

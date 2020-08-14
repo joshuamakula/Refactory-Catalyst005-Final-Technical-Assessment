@@ -1,0 +1,73 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Final Technical Assessment
+		link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+        
+	body
+		.container
+			.row
+				.col-md-8(style="margin: 0 auto; padding-top: 25px;")
+					fieldset.form-group.border.p-2
+						legend.w-auto.border-primary
+						img(src="/images/form-header-image.png" alt="")
+						div(style="text-align: center; padding-bottom: 30px;")
+							h5(style="font-weight: 400;") Mnistry of Health
+							h2(style="font-weight:bolder;") COVID-19 (CORONA VIRUS)
+							h5(style="font-weight: 400;") Virus - Test Registration Form 
+						form#covidReg(action="" name="covidReg" method="POST")
+							.form-row
+								.form-group.col-md-6
+									label(for="surName") Surname
+									input#surName.form-control(type="text" name="surName")
+									small#surNameerr.myError
+								.form-group.col-md-6
+									label(for="givenName") Given Name
+									input#givenName.form-control(type="text" name="givenName")
+									small#givenNameerr.myError
+							.form-row
+								.form-group.col-md-6
+									label(for="dob") Date of Birth
+									input#dob.form-control(type="date" name="dob")
+									small#doberr.myError
+								.form-group.col-md-6
+									label(for="residence") Place of residence
+									input#residence.form-control(type="text" name="residence")
+									small#residenceerr.myError
+							.form-row
+								.form-group.col-md-6
+									label(for="occupation") Occupation
+									input#occupation.form-control(type="text" name="occupation")
+									small#occupationerr.myError
+								.form-group.col-md-6
+									label(for="nationality") Nationality
+									input#nationality.form-control(type="text" name="nationality")
+									small#nationalityerr.myError
+							.form-row
+								.form-group.col-md-6
+									label(for="occupation") Gender
+							.form-row
+								.form-group.col-md-6
+									label.radio-inline
+										input(type="radio" name="gender" checked="")
+										| Male
+								.form-group.col-md-6
+									label.radio-inline
+										input(type="radio" name="gender")
+										| Female
+							.form-row
+								.form-group.col-md
+									label(for="category") Category
+									select#category.form-control(name="category")
+										option(value="0" selected="") -- Select Category --
+										option(value="1") Returnee
+										option(value="2") Contact
+										option(value="3") Alert
+										option(value="4") Volunteer
+									small#categoryerr.myError
+							.form-row
+								.form-group.offset-md-6.col-md-6
+									button.btn.btn-primary.btn-block.float-right(type="submit" onclick="return validateForm()") Register
+		script(src="/js/validate.js")
